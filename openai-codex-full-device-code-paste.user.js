@@ -6,6 +6,8 @@
 // @match https://auth.openai.com/*
 // @run-at document-idle
 // @grant none
+// @downloadURL https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.user.js
+// @updateURL https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.meta.js
 // ==/UserScript==
 (function () {
 'use strict';

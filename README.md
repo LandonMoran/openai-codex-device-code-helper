@@ -2,26 +2,45 @@
 
 An accessible AdGuard userscript that adds a **Paste full code from clipboard** button to the OpenAI Codex device-authorization page.
 
-It is designed for the nine-character device code form at `https://auth.openai.com/`. The script reads a complete code from the clipboard after you activate its button, fills all nine fields, and leaves the final **Continue** action for you to review and activate.
+It reads a complete nine-character device code after you activate its button, fills all nine fields, and leaves the final **Continue** action for you to review and activate.
 
-## Install in AdGuard
+## Install in AdGuard for Android
 
-AdGuard needs the direct JavaScript file URL—not the GitHub repository page. Copy and paste this URL into AdGuard's userscript subscription or **Add userscript from URL** field:
+Use this stable direct userscript URL—not the GitHub repository page:
 
 ```text
 https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.user.js
 ```
 
-This URL points directly to the `.user.js` file and is the recommended installation link. It stays the same when the script is updated because the file is maintained at this path on the `main` branch.
+In AdGuard, open the userscripts/extensions area, choose **Add userscript from URL** (the exact label may vary by version), paste the URL, and confirm.
 
-Typical steps:
+## How updates work in AdGuard
 
-1. Open AdGuard settings.
-2. Go to **Userscripts**.
-3. Choose **Add userscript** or **Add userscript from URL**. The exact label can vary by AdGuard version.
-4. Paste the direct JavaScript URL above.
-5. Confirm the installation or subscription.
-6. Open or reload the OpenAI device-authorization page.
+The script uses AdGuard-supported userscript metadata:
+
+- `@version 6.0.0` identifies the installed script version.
+- `@downloadURL` points to the complete script on the stable `main` URL.
+- `@updateURL` points to the metadata-only file at:
+  `https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.meta.js`
+
+AdGuard checks the update URL, compares the metadata `@version` with the installed version, and downloads the full script from `@downloadURL` when it finds a newer version. The update is then applied by AdGuard; users do not need to remove and reinstall the script.
+
+AdGuard's official compatibility documentation confirms support for `@version`, `@downloadURL`, and `@updateURL`, and shows the same separate `.meta.js` pattern. AdGuard's documentation does not promise a universal fixed check interval. The timing is controlled by AdGuard's update settings and Android background scheduling. Users can also use AdGuard's manual update action.
+
+### Publishing a future version
+
+1. Edit the `.user.js` file while preserving its functionality.
+2. Increase the `@version` value in the userscript metadata, for example from `6.0.0` to `6.0.1` or `7.0.0`.
+3. Put the exact same version in `openai-codex-full-device-code-paste.meta.js`.
+4. Keep both `@downloadURL` and `@updateURL` pointing to the stable `main` URLs.
+5. Commit the updated files to `main`.
+6. Optionally create a GitHub release/tag for the project, but do not change the stable installation URL.
+
+The metadata version must be higher than the installed version for AdGuard to treat it as an update.
+
+### Check the installed version
+
+Open AdGuard's userscripts/extensions list, select **OpenAI Codex Full Device Code Paste**, and view its details. The displayed version should be `6.0.0`. You can also compare it with the `@version` line in the installed script or the current file downloaded from the stable URL.
 
 ## Use
 
@@ -46,17 +65,11 @@ If clipboard access remains unavailable, use the page's ordinary paste behavior 
 - Reads the clipboard only after you activate the helper button.
 - Does not automatically submit the form or activate **Continue**.
 
-## Version 1.0.0
+## Versioning
 
-The first published GitHub release is [v1.0.0](https://github.com/LandonMoran/openai-codex-device-code-helper/releases/tag/v1.0.0).
+The current userscript version is `6.0.0`.
 
-The userscript source is intentionally unchanged from the original script. Its embedded userscript metadata currently reports `@version 5.0.0`; `v1.0.0` is the GitHub project release version.
-
-For a pinned copy of that release, use this direct JavaScript URL instead of the always-latest `main` URL:
-
-```text
-https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/v1.0.0/openai-codex-full-device-code-paste.user.js
-```
+The GitHub project release `v1.0.0` is separate historical project-release labeling; it is not the userscript's update version. Future userscript updates should keep the `@version` in the script and metadata file synchronized, whether or not a GitHub release is created.
 
 ## Disclaimer
 

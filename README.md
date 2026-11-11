@@ -23,9 +23,9 @@ The script uses AdGuard-supported userscript metadata:
 - `@updateURL` points to the metadata-only file at:
   `https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.meta.js`
 
-AdGuard checks the update URL, compares the metadata `@version` with the installed version, and downloads the full script from `@downloadURL` when it finds a newer version. The update is then applied by AdGuard; users do not need to remove and reinstall the script.
+AdGuard's official compatibility documentation confirms support for `@version`, `@downloadURL`, and `@updateURL`, and shows the same separate `.meta.js` pattern. When AdGuard performs an update check, it can read the metadata from `@updateURL`, compare its `@version` with the installed version, and use `@downloadURL` to retrieve the full script if the advertised version is newer. The existing script can then be updated in AdGuard without removing and reinstalling it.
 
-AdGuard's official compatibility documentation confirms support for `@version`, `@downloadURL`, and `@updateURL`, and shows the same separate `.meta.js` pattern. AdGuard's documentation does not promise a universal fixed check interval. The timing is controlled by AdGuard's update settings and Android background scheduling. Users can also use AdGuard's manual update action.
+AdGuard's public documentation and Android issue tracker do not specify a universal check interval or guarantee exactly when every Android device will run a background check. The timing depends on AdGuard's update settings and Android background scheduling. AdGuard also provides a manual update action. Therefore, this repository is configured for AdGuard's supported update mechanism, but the update should not be described as guaranteed instant or fully automatic on every device.
 
 ### Publishing a future version
 

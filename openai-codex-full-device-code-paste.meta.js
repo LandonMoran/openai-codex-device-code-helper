@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name OpenAI Codex Full Device Code Paste
 // @namespace landon.accessibility.codex
-// @version 6.0.0
+// @version 7.0.0
 // @description Accessible full-code clipboard entry for OpenAI device authorization.
 // @match https://auth.openai.com/*
 // @grant none

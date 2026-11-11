@@ -18,7 +18,7 @@ In AdGuard, open the userscripts/extensions area, choose **Add userscript from U
 
 The script uses AdGuard-supported userscript metadata:
 
-- `@version 6.0.0` identifies the installed script version.
+- `@version 7.0.0` identifies the installed script version.
 - `@downloadURL` points to the complete script on the stable `main` URL.
 - `@updateURL` points to the metadata-only file at:
   `https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.meta.js`
@@ -30,7 +30,7 @@ AdGuard's public documentation and Android issue tracker do not specify a univer
 ### Publishing a future version
 
 1. Edit the `.user.js` file while preserving its functionality.
-2. Increase the `@version` value in the userscript metadata, for example from `6.0.0` to `6.0.1` or `7.0.0`.
+2. Increase the `@version` value in the userscript metadata, for example from `7.0.0` to `7.0.1` or `8.0.0`.
 3. Put the exact same version in `openai-codex-full-device-code-paste.meta.js`.
 4. Keep both `@downloadURL` and `@updateURL` pointing to the stable `main` URLs.
 5. Commit the updated files to `main`.
@@ -40,7 +40,7 @@ The metadata version must be higher than the installed version for AdGuard to tr
 
 ### Check the installed version
 
-Open AdGuard's userscripts/extensions list, select **OpenAI Codex Full Device Code Paste**, and view its details. The displayed version should be `6.0.0`. You can also compare it with the `@version` line in the installed script or the current file downloaded from the stable URL.
+Open AdGuard's userscripts/extensions list, select **OpenAI Codex Full Device Code Paste**, and view its details. The displayed version should be `7.0.0`. You can also compare it with the `@version` line in the installed script or the current file downloaded from the stable URL.
 
 ## Use
 
@@ -67,7 +67,7 @@ If clipboard access remains unavailable, use the page's ordinary paste behavior 
 
 ## Versioning
 
-The current userscript version is `6.0.0`.
+The current userscript version is `7.0.0`.
 
 The GitHub project release `v1.0.0` is separate historical project-release labeling; it is not the userscript's update version. Future userscript updates should keep the `@version` in the script and metadata file synchronized, whether or not a GitHub release is created.
 

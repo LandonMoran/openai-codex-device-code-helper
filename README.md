@@ -4,27 +4,24 @@ An accessible AdGuard userscript that adds a **Paste full code from clipboard** 
 
 It is designed for the nine-character device code form at `https://auth.openai.com/`. The script reads a complete code from the clipboard after you activate its button, fills all nine fields, and leaves the final **Continue** action for you to review and activate.
 
-## Version 1.0.0
-
-This repository's first published release is **v1.0.0**.
-
-> The userscript source is intentionally kept unchanged from the original script. Its embedded userscript metadata currently reports `@version 5.0.0`; `v1.0.0` is the GitHub project release version.
-
 ## Install in AdGuard
 
-1. Install or open the **AdGuard Browser Extension**.
-2. Open AdGuard's settings.
-3. Go to **Userscripts**.
-4. Choose **Add userscript** or the option to add a userscript from a URL. The exact label can vary by AdGuard version.
-5. Paste this URL:
+AdGuard needs the direct JavaScript file URL—not the GitHub repository page. Copy and paste this URL into AdGuard's userscript subscription or **Add userscript from URL** field:
 
-   ```text
-   https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.user.js
-   ```
+```text
+https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/main/openai-codex-full-device-code-paste.user.js
+```
 
-6. Confirm the installation or subscription, then open or reload the OpenAI device-authorization page.
+This URL points directly to the `.user.js` file and is the recommended installation link. It stays the same when the script is updated because the file is maintained at this path on the `main` branch.
 
-The URL points to the file on the `main` branch, so it stays the same when the script is updated. AdGuard can use that URL to retrieve the latest version.
+Typical steps:
+
+1. Open AdGuard settings.
+2. Go to **Userscripts**.
+3. Choose **Add userscript** or **Add userscript from URL**. The exact label can vary by AdGuard version.
+4. Paste the direct JavaScript URL above.
+5. Confirm the installation or subscription.
+6. Open or reload the OpenAI device-authorization page.
 
 ## Use
 
@@ -49,9 +46,13 @@ If clipboard access remains unavailable, use the page's ordinary paste behavior 
 - Reads the clipboard only after you activate the helper button.
 - Does not automatically submit the form or activate **Continue**.
 
-## Fixed release URL
+## Version 1.0.0
 
-For a pinned copy of this release, use the GitHub release tag URL instead of the always-latest `main` URL:
+The first published GitHub release is [v1.0.0](https://github.com/LandonMoran/openai-codex-device-code-helper/releases/tag/v1.0.0).
+
+The userscript source is intentionally unchanged from the original script. Its embedded userscript metadata currently reports `@version 5.0.0`; `v1.0.0` is the GitHub project release version.
+
+For a pinned copy of that release, use this direct JavaScript URL instead of the always-latest `main` URL:
 
 ```text
 https://raw.githubusercontent.com/LandonMoran/openai-codex-device-code-helper/v1.0.0/openai-codex-full-device-code-paste.user.js
